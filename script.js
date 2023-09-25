@@ -49,7 +49,7 @@ for (let i = 0; i < terms.length; i++) {
     let column = document.createElement("div")
     column.id = "term" + terms[i]
     column.className = "column"
-    column.innerText = "term" + terms[i]
+    column.innerText = "Term " + terms[i]
 
     board.appendChild(column)
 
@@ -66,7 +66,7 @@ for (let i = 1; i < futureTerms.length; i++) {
 }
 for (let index = 0; index < data.length; index++) {
     let code = document.createElement("div")
-    code.innerHTML="<div class='codename'>" + data[index].code +"</div>" + "<div class='codedescription'>"+  data[index].course+"</div>"
+    code.innerHTML = "<div class='codename'>" + data[index].code + "</div>" + "<div class='codedescription'>" + data[index].course + "</div>"
     code.id = "code" + data[index].code
     code.className = "code"
     code.addEventListener("mouseenter", mouseenter)
@@ -80,10 +80,30 @@ for (let index = 0; index < data.length; index++) {
 
 function click(e) {
 
-    $("#options").css("top", e.clientY)
-    $("#options").css("left", e.clientX)
-    $("#message").css("top", e.clientY)
-    $("#message").css("left", e.clientX)
+    console.log("e.clientY + 220 >window.innerHeight");
+    console.log(e.clientY + 220 > window.innerHeight);
+    if (e.clientY + 200 > window.innerHeight) {
+        $("#options").css("top", window.innerHeight - 200)
+
+    } else {
+        $("#options").css("top", e.clientY)
+
+    }
+
+    console.log("e.clientX + 180 >window.innerWidth");
+    console.log(e.clientX + 180 > window.innerWidth);
+
+    if (e.clientX + 180 > window.innerWidth) {
+        $("#options").css("left", window.innerWidth - 205)
+
+    } else {
+        $("#options").css("left", e.clientX)
+    }
+
+
+
+    // $("#message").css("top", e.clientY)
+    // $("#message").css("left", e.clientX)
 
     boxSelected = this
     selected = this.id.substring(4, 12)
@@ -135,8 +155,12 @@ function click(e) {
 }
 
 function updatePrerequisities() {
-    data.forEach(element => {
+    prerequisited1Selected = {}
+    prerequisited2Selected = {}
+    prerequisited3Selected = {}
+    prerequisited4Selected = {}
 
+    data.forEach(element => {
         if (element.code == courseSelected.prerequisite1) {
             prerequisited1Selected = element
         }
@@ -155,15 +179,13 @@ function updatePrerequisities() {
     console.log(prerequisited2Selected);
     console.log(prerequisited3Selected);
     console.log(prerequisited4Selected);
-
-
 }
 
 function optionChanged() {
     console.log("changed");
 
     let optionsAvailable = document.getElementsByName("option")
-    console.log(optionsAvailable )
+    console.log(optionsAvailable)
     optionSelected = ""
     optionsAvailable.forEach(o => {
         if (o.checked) {
@@ -231,8 +253,8 @@ function optionChanged() {
             console.log(optionSelected)
             document.getElementById(nameColumn).appendChild(boxSelected)
 
-            data.forEach(c =>{
-                if(c.code == courseSelected.code){
+            data.forEach(c => {
+                if (c.code == courseSelected.code) {
                     c.columnValue = idSelected
                 }
             })
@@ -262,16 +284,16 @@ function checkRequisites(c) {
         $("#message").text("Please check the pre-requirements")
         $("#message").show("slow")
 
-        setTimeout (hideMessage, 2000);
-        
+        setTimeout(hideMessage, 2000);
+
         console.log("you CANNOT eroll this course! Check requisits")
         return false
     }
 
-    
+
 }
 
-function hideMessage(){
+function hideMessage() {
     $("#message").hide("slow")
 }
 

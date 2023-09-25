@@ -3,15 +3,37 @@
     padding: 2px;
 }
 
+header{
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+
+}
+
+#img-container{
+    max-width: 145px;
+}
+
+img{
+    width: 100%;
+}
+
+#headertitle{
+    padding-top: 10px;
+    font-size: larger;
+    font-weight: bold;
+}
+
 #board{
     display: flex;
+    flex-wrap: wrap;
 }
 #board-schedule{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .column{
-    min-width: 170px;
+    min-width: 150px;
     text-align: center;
 
 }
@@ -28,7 +50,7 @@
     text-align: center;
     border: solid 2px darkblue;
     border-radius: 8px;
-    padding: 10px;
+    padding: 5px;
     margin: 10px;
     height: 80px;
     width: 120px;
@@ -77,3 +99,16 @@ input{
     border-radius: 8px;
     padding: 20px;
 }
+
+footer{
+    min-height: 500px;
+}
+
+@media only screen and (max-width: 600px) {
+    #headertitle{
+        padding: 10px;
+        font-size: medium;
+        font-weight: bold;
+        text-align: center;
+    }
+    }
