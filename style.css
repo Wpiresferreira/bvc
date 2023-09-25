@@ -1,0 +1,79 @@
+*{
+    font-family: Verdana;
+    padding: 2px;
+}
+
+#board{
+    display: flex;
+}
+#board-schedule{
+    display: flex;
+}
+
+.column{
+    min-width: 170px;
+    text-align: center;
+
+}
+
+.codename{
+    font-size: small;
+    font-weight: bold;
+}
+
+.codedescription{
+    font-size: 10px;
+}
+.code{
+    text-align: center;
+    border: solid 2px darkblue;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    height: 80px;
+    width: 120px;
+    height: 60px;
+}
+
+.selected{
+    background-color: lightblue;
+}
+.prerequisite{
+    background-color: lightsalmon;
+}
+.posrequisite{
+    background-color: lightgreen;
+}
+.coursed{
+    background-color: darkgreen;
+    color: lightgoldenrodyellow;
+}
+
+#options{
+    width: 180px;
+    position: fixed;
+    background-color:lightblue;
+    border: 2px solid darkblue;
+    border-radius: 8px;
+}
+
+#optionsradio{
+    display: grid;
+    grid-template-columns: 20px 120px;
+    
+}
+
+input{
+    width: 12px;
+}
+
+#message{
+    top: 50px;
+    left: 45vw;
+    width: 180px;
+    position: fixed;
+    background-color:lightcoral;
+    border: 2px solid darkred;
+    border-radius: 8px;
+    padding: 20px;
+}
