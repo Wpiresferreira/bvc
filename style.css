@@ -107,7 +107,7 @@ footer{
 @media only screen and (max-width: 600px) {
     #headertitle{
         padding: 10px;
-        font-size: medium;
+        font-size: small;
         font-weight: bold;
         text-align: center;
     }
