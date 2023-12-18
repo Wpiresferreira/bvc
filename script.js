@@ -1,34 +1,40 @@
 var terms = ['1', '2', '3', '4']
-var futureTerms = [{ id: -1, term: "Not Coursed", season: "Not Coursed", name: "notcoursed" }, { id: 0, term: "Coursed", season: "Coursed", name: "coursed" }, { id: 1, term: "Winter/2024", season: "Winter", name: "winter2024" }, { id: 2, term: "Spring Summer/2024", season: "Spring", name: "spring2024" }, { id: 3, term: "Fall/2024", season: "Fall", name: "fall2024" }, { id: 4, term: "Winter/2025", season: "Winter", name: "winter2025" }, { id: 5, term: "Spring Summer/2025", season: "Spring", name: "spring2025" }, { id: 6, term: "Fall/2025", season: "Fall", name: "fall2025" }]
-var data = [{ term: '1', code: 'MATH1901', course: 'Math for the Computer Industry', credits: '3', availability: 'Fall/Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
-{ term: '1', code: 'MGMT1103', course: 'Essential Skills for Teams Collaboration', credits: '3', availability: 'Fall/Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
-{ term: '1', code: 'SODV1101', course: 'Programming Fundamentals', credits: '3', availability: 'Fall/Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
-{ term: '1', code: 'TECH1101', course: 'Web and Internet Fundamentals', credits: '3', availability: 'Fall/Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
-{ term: '1', code: 'TECH1102', course: 'Internet of Things', credits: '3', availability: 'Fall/Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
-{ term: '2', code: 'DATA1201', course: 'Introduction to Relational Databases', credits: '3', availability: 'Winter/Spring', prerequisite1: 'SODV1101', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
-{ term: '2', code: 'DESN2301', course: 'User Experience Design', credits: '3', availability: 'Winter/Spring', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
-{ term: '2', code: 'SODV1201', course: 'Introduction to Web Programming', credits: '3', availability: 'Winter/Spring', prerequisite1: 'SODV1101', prerequisite2: 'TECH1101', prerequisite3: '', prerequisite4: '' },
-{
-    term: '2', code: 'SODV1202', course: 'Introduction to Object Oriented Programming', credits: '3', availability: 'Winter / Spring', prerequisite1: 'SODV1101', prerequisite2: 'MATH1901', prerequisite3: '', prerequisite4: ''
-},
-{ term: '2', code: 'TECH1201', course: 'Networking Essentials', credits: '3', availability: 'Winter/Spring', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
-{ term: '3', code: 'DATA2201', course: 'Relational Databases', credits: '3', availability: 'Fall', prerequisite1: 'DATA1201', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
-{
-    term: '3', code: 'MGMT1104', course: 'Project Management in Software Development', credits: '3', availability: 'Fall', prerequisite1: 'MGMT1103', prerequisite2: '', prerequisite3: '', prerequisite4: ''
-},
-{ term: '3', code: 'SODV2101', course: 'Rapid Application Development', credits: '3', availability: 'Fall', prerequisite1: 'SODV1202', prerequisite2: 'DATA1201', prerequisite3: '', prerequisite4: '' },
-{ term: '3', code: 'SODV2201', course: 'Web Programming', credits: '3', availability: 'Fall', prerequisite1: 'SODV1201', prerequisite2: 'SODV1202', prerequisite3: 'DATA1201', prerequisite4: '' },
-{ term: '3', code: 'SODV2202', course: 'Object Oriented Programming', credits: '3', availability: 'Fall', prerequisite1: 'DATA1201', prerequisite2: 'SODV1202', prerequisite3: '', prerequisite4: '' },
-{
-    term: '4', code: 'SODV2203', course: 'Introduction to Game and Simulation Programming', credits: '3', availability: 'Winter', prerequisite1: 'SODV2202', prerequisite2: '', prerequisite3: '', prerequisite4: ''
-},
-{ term: '4', code: 'SODV3203', course: 'Mobile Application Development', credits: '3', availability: 'Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
-{ term: '4', code: 'SODV2401', course: 'Algorithms and Data Structures', credits: '3', availability: 'Winter', prerequisite1: 'SODV1202', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
-{
-    term: '4', code: 'SODV2999', course: 'Software Development Diploma Capstone Project', credits: '3', availability: 'Winter', prerequisite1: 'DESN2301', prerequisite2: 'MGMT1104', prerequisite3: 'SODV2101', prerequisite4: 'SODV2201'
-},
-{ term: '4', code: 'TECH2102', course: 'Enterprise Computing', credits: '3', availability: 'Winter', prerequisite1: 'TECH1201', prerequisite2: 'SODV2201', prerequisite3: '', prerequisite4: '' }
+var futureTerms = [
+    { id: -1, term: "Not Coursed", season: "Not Coursed", name: "notcoursed" }, { id: 0, term: "Coursed", season: "Coursed", name: "coursed" },
+    { id: 1, term: "Winter/2024", season: "Winter", name: "winter2024" },
+    { id: 2, term: "Spring Summer/2024", season: "Spring", name: "spring2024" },
+    { id: 3, term: "Fall/2024", season: "Fall", name: "fall2024" },
+    { id: 4, term: "Winter/2025", season: "Winter", name: "winter2025" },
+    { id: 5, term: "Spring Summer/2025", season: "Spring", name: "spring2025" },
+    { id: 6, term: "Fall/2025", season: "Fall", name: "fall2025" },
+    { id: 7, term: "Winter/2026", season: "Winter", name: "winter2026" },
+    { id: 8, term: "Spring Summer/2026", season: "Spring", name: "spring2026" },
+    { id: 9, term: "Fall/2026", season: "Fall", name: "fall2026" },
+    { id: 10, term: "Winter/2027", season: "Winter", name: "winter2027" },
+    { id: 11, term: "Spring Summer/2027", season: "Spring", name: "spring2027" },
+    { id: 12, term: "Fall/2027", season: "Fall", name: "fall2027" }
 ]
+var data = [
+    { term: '1', code: 'MATH1901', course: 'Math for the Computer Industry', credits: '3', availability: 'Fall/Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
+    { term: '1', code: 'MGMT1103', course: 'Essential Skills for Teams Collaboration', credits: '3', availability: 'Fall/Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
+    { term: '1', code: 'SODV1101', course: 'Programming Fundamentals', credits: '3', availability: 'Fall/Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
+    { term: '1', code: 'TECH1101', course: 'Web and Internet Fundamentals', credits: '3', availability: 'Fall/Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
+    { term: '1', code: 'TECH1102', course: 'Internet of Things', credits: '3', availability: 'Fall/Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
+    { term: '2', code: 'DATA1201', course: 'Introduction to Relational Databases', credits: '3', availability: 'Winter/Spring', prerequisite1: 'SODV1101', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
+    { term: '2', code: 'DESN2301', course: 'User Experience Design', credits: '3', availability: 'Winter/Spring', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
+    { term: '2', code: 'SODV1201', course: 'Introduction to Web Programming', credits: '3', availability: 'Winter/Spring', prerequisite1: 'SODV1101', prerequisite2: 'TECH1101', prerequisite3: '', prerequisite4: '' },
+    { term: '2', code: 'SODV1202', course: 'Introduction to Object Oriented Programming', credits: '3', availability: 'Winter / Spring', prerequisite1: 'SODV1101', prerequisite2: 'MATH1901', prerequisite3: '', prerequisite4: ''}, 
+    { term: '2', code: 'TECH1201', course: 'Networking Essentials', credits: '3', availability: 'Winter/Spring', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
+    { term: '3', code: 'DATA2201', course: 'Relational Databases', credits: '3', availability: 'Fall', prerequisite1: 'DATA1201', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
+    { term: '3', code: 'MGMT1104', course: 'Project Management in Software Development', credits: '3', availability: 'Fall', prerequisite1: 'MGMT1103', prerequisite2: '', prerequisite3: '', prerequisite4: ''}, 
+    { term: '3', code: 'SODV2101', course: 'Rapid Application Development', credits: '3', availability: 'Fall', prerequisite1: 'SODV1202', prerequisite2: 'DATA1201', prerequisite3: '', prerequisite4: '' },
+    { term: '3', code: 'SODV2201', course: 'Web Programming', credits: '3', availability: 'Fall', prerequisite1: 'SODV1201', prerequisite2: 'SODV1202', prerequisite3: 'DATA1201', prerequisite4: '' },
+    { term: '3', code: 'SODV2202', course: 'Object Oriented Programming', credits: '3', availability: 'Fall', prerequisite1: 'DATA1201', prerequisite2: 'SODV1202', prerequisite3: '', prerequisite4: '' },
+    { term: '4', code: 'SODV2203', course: 'Introduction to Game and Simulation Programming', credits: '3', availability: 'Winter', prerequisite1: 'SODV2202', prerequisite2: '', prerequisite3: '', prerequisite4: ''},
+    { term: '4', code: 'SODV3203', course: 'Mobile Application Development', credits: '3', availability: 'Winter', prerequisite1: '', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
+    { term: '4', code: 'SODV2401', course: 'Algorithms and Data Structures', credits: '3', availability: 'Winter', prerequisite1: 'SODV1202', prerequisite2: '', prerequisite3: '', prerequisite4: '' },
+    { term: '4', code: 'SODV2999', course: 'Software Development Diploma Capston Project', credits: '3', availability: 'Winter', prerequisite1: 'DESN2301', prerequisite2: 'MGMT1104', prerequisite3: 'SODV2101', prerequisite4: 'SODV2201'}, 
+    { term: '4', code: 'TECH2102', course: 'Enterprise Computing', credits: '3', availability: 'Winter', prerequisite1: 'TECH1201', prerequisite2: 'SODV2201', prerequisite3: '', prerequisite4: '' }]
 
 var board = document.getElementById("board")
 var boardSchedule = document.getElementById("board-schedule")
@@ -100,14 +106,8 @@ function click(e) {
         $("#options").css("left", e.clientX)
     }
 
-
-
-    // $("#message").css("top", e.clientY)
-    // $("#message").css("left", e.clientX)
-
     boxSelected = this
     selected = this.id.substring(4, 12)
-
 
     $("#options").show("slow")
 
@@ -126,8 +126,6 @@ function click(e) {
         }
     });
     updatePrerequisities()
-
-
 
     console.log(possible);
     optionstitle.innerHTML = ""
@@ -195,11 +193,6 @@ function optionChanged() {
 
     var nameColumn = ""
     var columnValue = ""
-    // if(optionSelected == "Not Coursed"){
-    //     courseSelected.scheduled = false
-    // }else{
-    //     courseSelected.scheduled = true
-    // }
 
     futureTerms.forEach(f => {
         if (f.term == optionSelected) {
@@ -207,24 +200,7 @@ function optionChanged() {
             columnValue = f.id
         }
     })
-    // console.log(nameColumn)
-    // console.log("prerequisited1Selected.code != undefined ")
-    // console.log(prerequisited1Selected.code != undefined)
-    // console.log("prerequisited1Selected.code")
-    // console.log(prerequisited1Selected.code)
-
-    //     // console.log(nameColumn)
-    // // console.log(nameColumn)
-    // if (prerequisited1Selected != {}) {
-
-    //     if (prerequisited1Selected.columnValue >= 0 && prerequisited1Selected.columnValue < courseSelected.columnValue) {
-    //         console.log("You can go ahead");
-    //     } else {
-    //         console.log("You can NOT go ahead");
-
-    //     }
-    // }
-
+    
     newElement = this
 
     console.log(optionSelected);
@@ -343,11 +319,8 @@ function mouseleave() {
 
 }
 
-
 function addCoursed(codeCourse) {
 
     document.getElementById("code" + codeCourse).classList.add("coursed")
 
 }
-
-
